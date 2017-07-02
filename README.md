@@ -1,3 +1,36 @@
+## 추가설치 라이브러리
+- bulma
+- node-sass
+- sass-loader
+- style-loader
+- font-awesome
+
+## Dependencies
+``` sh
+npm i -S bulma
+
+npm i -D node-sass-chokidar
+npm i -D npm-run-all
+
+npm i -S axios
+```
+
+## import bulma sass & font awesome
+``` css
+@import '../node_modules/bulma/bulma.sass'
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+```
+
+## add npm scripts
+``` json
+"build-css": "node-sass-chokidar src/ -o src/",
+"watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+"start-js": "react-scripts start",
+"start": "npm-run-all -p watch-css start-js",
+"build": "npm run build-css && react-scripts build",
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
